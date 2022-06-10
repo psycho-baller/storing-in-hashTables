@@ -70,12 +70,13 @@ public class HashTable
 		LinkedList<Student> list = arr[index];
 		for (Student s : list){
 			if (s.getName().equals(name)){
+				int prevAge = s.getAge();
 				s.setAge(age);
-				System.out.println("Student " + name + " is being modified to age " + age);
+				System.out.println("Changing age of " + name + " from "+ prevAge + " to " + age);
 				return;
 			}
 		}
-		list.add(new Student(name, age));
+		list.addFirst(new Student(name, age));
 		System.out.println("Student " + name + " is being inserted with age " + age);
 	}
 
